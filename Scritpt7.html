@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial scale=1.0">
+ <title>por Id</title>
+</head>
+<body>
+ <p id="oi" style="color: brown;">primeiro OI</p>
+
+ <script>
+ document.getElementById("oi").innerText = "Olá rapaziada";
+ </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>By Tag</title>
+</head>
+<body>
+ <div> 
+ <h1 id="id_h1" class="classe_h1">Praias de Santa Catarina</h1>
+ <div>
+ <p>*** As mais limpas ***</p>
+ </div>
+ <p id="p_praia1" name="p_praia1" class="praia1">Poá</p>
+ <p id="p_praia2" name="p_praia2" class="praia2">Bombinhas</p>
+ <p id="p_praia3" name="p_praia3" class="praia3">Taquaras</p>
+ <p id="p_praia4" name="p_praia4" class="praia4">Sepultura</p> 
+ </div>
+ <h1 id = "id_h12"></h1>
+ <script> 
+ //console.log(document.getElementsByTagName('h1')[0]);
+ console.log(document.getElementsByTagName('p'));
+ </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Exemplo de onBlur</title>
+</head>
+<body>
+ <h1>Exemplo de onBlur</h1>
+ <form>
+ <label for="nome">Nome:</label>
+ <input type="text" id="nome" onblur="validarNome()">
+ <p id="mensagem"></p>
+ </form>
+ <script>
+ function validarNome() {
+ var nomeInput = document.getElementById('nome');
+ var mensagem = document.getElementById('mensagem');
+ if (nomeInput.value === '') {
+ mensagem.textContent = 'Por favor, preencha o campo Nome.';
+ } else {
+ mensagem.textContent = ''; // Limpa a mensagem de erro
+ }
+ }
+ </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Exemplo de onSubmit</title>
+</head>
+<body>
+ <h1>Exemplo de onSubmit</h1>
+ <form onsubmit="return validarFormulario()">
+ <label for="nome">Nome:</label>
+ <input type="text" id="nome" required>
+ <br>
+ <label for="email">Email:</label>
+ <input type="email" id="email" required>
+ <br>
+ <input type="submit" value="Enviar">
+ </form>
+ <script>
+ function validarFormulario() {
+ var nome = document.getElementById('nome').value;
+ var email = document.getElementById('email').value;
+ if (nome === '' || email === '') {
+ alert('Por favor, preencha todos os campos.');
+ return false; // Impede o envio do formulário se houver campos em branco
+ }
+ // Lógica adicional de validação pode ser adicionada aqui
+ return true; // Permite o envio do formulário se todos os campos estiverem preenchidos
+ }
+ </script>
+</body>
+</html>
